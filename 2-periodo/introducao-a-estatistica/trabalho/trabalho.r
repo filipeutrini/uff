@@ -1,4 +1,6 @@
+#---------------------------------------------------------------
 # PREPARAÇÃO
+#---------------------------------------------------------------
 
 if (!require(rstudioapi)) install.packages("rstudioapi")
 library(rstudioapi)
@@ -63,7 +65,6 @@ curtose_excess = function(x) {
 }
 
 #TRADUÇÃO DOS DADOS E REMOÇÃO DOS NA
-
 base_total$gender <- factor(base_total$gender,
                                     levels = c("Male", "Female", "Other"),
                                     labels = c("Homem", "Mulher", "Outro"))
@@ -79,7 +80,6 @@ base_total$diabetes_risk <- factor(base_total$diabetes_risk,
 base_total = na.omit(base_total)
 
 # SELEÇÃO DA AMOSTRA
-
 linhas = nrow(base_total)
 
 variavel = base_total$fasting_blood_sugar
@@ -95,8 +95,11 @@ dados = base_total[amostra,]
 
 nrow(dados)
 
-# ANÁLISE DAS VARIÁVEIS
 
+
+#---------------------------------------------------------------
+# ANÁLISE DAS VARIÁVEIS
+#---------------------------------------------------------------
 # IDADE (VNC)
 idades = dados$age
 
@@ -255,4 +258,30 @@ legend("topright",
        fill = c("gray60", "gray80", "gray90"),
 )
 
-write.csv(dados, file = "amostra.csv")
+
+
+#---------------------------------------------------------------
+# RELAÇÃO ENTRE VARIÁVEIS
+#---------------------------------------------------------------
+
+# RELAÇÃO ENTRE NÍVEL DE ATIVIDADE FÍSICA (physical_activity_level) E RISCO DE DIABETES (diabetes_risk)
+tabela_atividade_risco = table(dados$physical_activity_level, dados$diabetes_risk)
+tabela_atividade_risco
+
+prop.table(tabela_atividade_risco, margin = 1)
+round(prop.table(tabela_atividade_risco,
+                 margin = 1) * 100, 1)
+
+qui_atividade_risco <- chisq.test(tabela_atividade_risco)
+qui_atividade_risco
+qui_atividade_risco$expected
+qui_atividade_risco$p.value
+
+barplot(prop.table(table(dados$diabetes_risk,
+                         dados$physical_activity_level),
+                   margin = 1),
+        beside = TRUE,
+        legend = TRUE,
+        ylim = c(0,1),
+        main = "Risco de Diabetes por Nível de Atividade Física",
+        ylab = "Proporcao")
