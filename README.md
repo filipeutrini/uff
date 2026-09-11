@@ -3,14 +3,14 @@ Este repositório contém os exercícios, códigos práticos e projetos desenvol
 
 ---
 
-## 🛠️ Tecnologias e Linguagens Utilizadas
+##Tecnologias e Linguagens Utilizadas
 
-- **Linguagens:** Python, C
+- **Linguagens:** Python, C, R
 - **Ferramentas:** Visual Studio Code, Linux, Git
 
 ---
 
-## 📂 Estrutura do Repositório
+## Estrutura do Repositório
 
 O repositório está organizado por períodos e disciplinas:
 
