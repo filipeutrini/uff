@@ -16,9 +16,11 @@ O repositório está organizado por períodos e disciplinas:
 
 ```text
 .
-├── 1_periodo/
-│   └── programacao_1/
-├── 2_periodo/
-│   ├── introducao_a_estatistica/
-│   └── programacao_estruturada/
+├── 1-periodo/
+│   └── programacao-1/
+├── 2-periodo/
+│   ├── introducao-a-estatistica/
+│   └── programacao-estruturada/
+├── .gitignore
+├── LICENSE.txt
 └── README.md
