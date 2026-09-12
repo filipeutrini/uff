@@ -1,0 +1,9 @@
+L1: Este é um arquivo de teste.; 27 caracteres; 5 espaços em branco; 6 palavras; 21 letras
+L2: As palavras escritas aqui serão analizadas pelo programa.; 57 caracteres; 7 espaços em branco; 8 palavras; 49 letras
+L3: Esse programa possui uma analise geral do texto, um arquivo com as palavras ordenadas e um glossário de palavras.; 113 caracteres; 18 espaços em branco; 19 palavras; 93 letras
+--------------------------------------------------
+Total de linhas: 3
+Total de caracteres: 197
+Total de espaços em branco: 30
+Total de palavras: 33
+Total de letras: 163
