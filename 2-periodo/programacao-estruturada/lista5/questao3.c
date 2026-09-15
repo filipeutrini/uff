@@ -77,4 +77,7 @@ int main(void) {
 
     int** hadamard = H(tam);
     imprime_matriz(hadamard, tam, tam);
+    libera_matriz(hadamard, tam);
+    
+    return 0;
 }
